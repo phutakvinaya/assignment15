@@ -1,0 +1,124 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class=" text-center">
+      
+        <h1 style="color:palevioletred">Contact our </h1>
+        <h1>Customer Support Center</h1>
+      
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img src="../assets/laptop.jpg" alt="" style="width:63%">
+   
+    </div>
+    
+      
+    </div>
+    <div class="text-center mt-4">
+      <h5>Contact Information</h5>
+      <h6>Please fill out your Contact information below</h6>
+    </div>
+      
+    <form action="" [formGroup] = "MarvellousForm">
+      <div class="row">
+        <div>Name <span style="color: palevioletred;">*</span></div>
+        <div class="col-md-10">
+          <div class="row">
+            <div class="col-md-4">
+             
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" class="form-control" [class.is-invalid]= "MarvellousForm.get('Firstname')?.invalid && MarvellousForm.get('Firstname')?.touched" formControlName="Firstname">
+                  <small [class.d-none]="MarvellousForm.get('Firstname')?.valid || MarvellousForm.get('Firstname')?.untouched">Alphabets is required</small>
+                </div>
+             
+            </div>
+            <div class="col-md-4">
+              <label>Last Name</label>
+                <div class="form-group">
+                  <input type="text" class="form-control" [class.is-invalid]="MarvellousForm.get('Lastname')?.invalid && MarvellousForm.get('Lastname')?.touched" formControlName="Lastname">
+                  <small [class.d-none]="MarvellousForm.get('Lastname')?.valid || MarvellousForm.get('Lastname')?.untouched">Alphabets is required</small>
+                </div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-12">
+          
+            <div class="form-group">
+              <label>Email <span style="color: palevioletred;">*</span></label>
+              <input type="email" class="form-control" formControlName="Email" [class.is-invalid]="MarvellousForm.get('Email')?.invalid && MarvellousForm.get('Email')?.touched">
+              <small [class.d-none]="MarvellousForm.get('Email')?.valid || MarvellousForm.get('Email')?.untouched">email is required</small>
+            </div>
+        
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-12">
+          
+            <div class="form-group">
+              <label>Phone <span style="color: palevioletred;">*</span></label>
+              <input type="text" class="form-control" formControlName ="Phone" [class.is-invalid]="MarvellousForm.get('Phone')?.invalid && MarvellousForm.get('Phone')?.touched">
+              <small [class.d-none]="MarvellousForm.get('Phone')?.valid || MarvellousForm.get('Phone')?.untouched">10 Numbers required</small>
+            </div>
+          
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-12">
+          
+            <div class="form-group">
+              <label>City <span style="color: palevioletred;">*</span></label>
+              <input type="text" class="form-control" formControlName ="City" [class.is-invalid]="MarvellousForm.get('City')?.invalid && MarvellousForm.get('City')?.touched">
+              <small [class.d-none]="MarvellousForm.get('City')?.valid || MarvellousForm.get('City')?.untouched">4 alphabets required</small>
+            </div>
+          
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-12">
+          
+            <div class="form-group">
+              <label>ZipCode <span style="color: palevioletred;">*</span></label>
+              <input type="text" class="form-control" formControlName ="ZipCode" [class.is-invalid]="MarvellousForm.get('ZipCode')?.invalid && MarvellousForm.get('ZipCode')?.touched">
+              <small [class.d-none]="MarvellousForm.get('ZipCode')?.valid || MarvellousForm.get('ZipCode')?.untouched">5 Numbers required</small>
+            </div>
+          
+        </div>
+      </div>
+  <div class="row mt-4">
+        <div class="col-md-12">
+         
+          <div class="form-group">
+            <label>Comments <span style="color: palevioletred;">*</span></label>
+            <input type="text" class="form-control" formControlName ="comments" [class.is-invalid]="MarvellousForm.get('comments')?.invalid && MarvellousForm.get('comments')?.touched">
+            <small [class.d-none]="MarvellousForm.get('comments')?.valid || MarvellousForm.get('comments')?.untouched">30 words required</small>
+          </div>
+            
+         
+        </div>
+      </div> 
+
+      <div class="row mt-4">
+        <label>ZipCode <span style="color: palevioletred;">*</span></label>
+
+        <select
+        class="custom-select mb-3"
+        formControlName="cityName"
+      >
+        <option value="">Choose state</option>
+        <option>Maharastra </option>
+        <option>Gujrat </option>
+        <option>Uttar Pradesh </option>
+        
+      </select>
+      </div>
+      <div>
+        <button [disabled]="MarvellousForm.invalid">Submit</button>
+      </div>
+  </form>
+</div>
+<router-outlet></router-outlet>
